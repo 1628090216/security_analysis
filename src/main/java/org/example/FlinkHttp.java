@@ -14,7 +14,7 @@ public class FlinkHttp {
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         StreamTableEnvironment tEnv = StreamTableEnvironment.create(env);
-        // 注册自定义函数, 用于判断是否为 Base64
+        // 注册自定义函数,用于判断是否为 Base64
         tEnv.createTemporarySystemFunction("isBase64", IsBase64Function.class);
         tEnv.createTemporarySystemFunction("StringContains", StringContains.class);
         // 1. 加载 XML SQL
